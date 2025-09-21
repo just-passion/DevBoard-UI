@@ -2,11 +2,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import type { RootState, AppDispatch } from '../../store/store';
 import { logout } from '../../store/slices/authSlice';
-
+import NotificationDropdown from '../Notification/NotificationDropdown';
 const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useSelector((state: RootState) => state.auth);
-  const { unreadCount } = useSelector((state: RootState) => state.notifications);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -21,14 +20,7 @@ const Header = () => {
           </Link>
           
           <div className="flex items-center space-x-4">
-            <Link to="/notifications" className="relative">
-              <span className="text-2xl">🔔</span>
-              {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {unreadCount}
-                </span>
-              )}
-            </Link>
+            <NotificationDropdown />
             
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">

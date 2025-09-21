@@ -4,6 +4,7 @@ import RegisterPage from '../components/Auth/RegisterPage';
 import DashboardPage from '../pages/Dashboard/DashboardPage';
 import KanbanPage from '../pages/Kanban/KanbanPage';
 import LoginPage from '../components/Auth/LoginPage';
+import NotificationPage from '../pages/Notifications/NotificationPage';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,11 @@ const AppRoutes = () => {
         </ProtectedRoute>
       } />
       
+      <Route path="/notifications" element={
+         <ProtectedRoute>
+          <NotificationPage />
+         </ProtectedRoute>
+      } />
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
