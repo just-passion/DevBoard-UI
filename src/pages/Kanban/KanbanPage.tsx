@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
-import { AppDispatch, RootState } from '../../store/store';
+import { DragDropContext, Droppable, Draggable, type DropResult } from '@hello-pangea/dnd';
+import type { AppDispatch, RootState } from '../../store/store';
 import { fetchTasks, updateTaskStatus } from '../../store/slices/taskSlice';
 import { setCurrentProject } from '../../store/slices/projectSlice';
 import Header from '../../components/Layout/Header';
-import TaskModal from '../../components/Modals/TaskModal';
-import { Task } from '../../types';
+import type { Task } from '../../types';
+import TaskModal from '../../Modals/TaskModal';
 
 const KanbanPage = () => {
   const { projectId } = useParams<{ projectId: string }>();

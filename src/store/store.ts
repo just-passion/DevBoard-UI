@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './slices/authSlice';
-import projectReducer from './slices/projectSlice';
-import taskReducer from './slices/taskSlice';
-import notificationReducer from './slices/notificationSlice';
+import authReducer from './slices/authSlice.ts';
+import projectReducer from './slices/projectSlice.ts';
+import taskReducer from './slices/taskSlice.ts';
+import notificationReducer from './slices/notificationSlice.ts';
 
 export const store = configureStore({
   reducer: {

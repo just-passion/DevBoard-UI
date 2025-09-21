@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { taskService } from '../../services/taskService';
-import { TaskState, Task } from '../../types';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { taskService } from '../../services/taskService.ts';
+import type { TaskState } from '../../types';
 
 export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',

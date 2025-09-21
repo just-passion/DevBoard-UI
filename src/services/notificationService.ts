@@ -1,3 +1,5 @@
+import { api } from './apiClient';
+
 export const notificationService = {
   getNotifications: async () => {
     const response = await api.get('/notifications');

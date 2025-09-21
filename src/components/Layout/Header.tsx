@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { RootState, AppDispatch } from '../../store/store';
+import type { RootState, AppDispatch } from '../../store/store';
 import { logout } from '../../store/slices/authSlice';
 
 const Header = () => {

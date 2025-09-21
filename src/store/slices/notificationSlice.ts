@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { notificationService } from '../../services/notificationService';
-import { Notification } from '../../types';
+import { notificationService } from '../../services/notificationService.ts';
+import type { Notification } from '../../types';
 
 interface NotificationState {
   notifications: Notification[];

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AppDispatch, RootState } from '../../store/store';
+import type { AppDispatch, RootState } from '../../store/store';
 import { fetchProjects } from '../../store/slices/projectSlice';
 import Header from '../../components/Layout/Header';
-import CreateProjectModal from '../../components/Modals/CreateProjectModal';
-import { Project } from '../../types';
+import CreateProjectModal from '../../Modals/CreateProjectModal';
+import type { Project } from '../../types';
 
 const DashboardPage = () => {
   const dispatch = useDispatch<AppDispatch>();

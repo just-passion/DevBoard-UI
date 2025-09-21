@@ -1,3 +1,5 @@
+import { api } from './apiClient';
+
 export const projectService = {
   getProjects: async () => {
     const response = await api.get('/projects');

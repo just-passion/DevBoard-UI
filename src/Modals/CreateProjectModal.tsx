@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { AppDispatch } from '../../store/store';
-import { createProject } from '../../store/slices/projectSlice';
+import type { AppDispatch } from '../store/store';
+import { createProject } from '../store/slices/projectSlice';
 
 interface CreateProjectModalProps {
   onClose: () => void;

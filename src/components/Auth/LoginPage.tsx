@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { AppDispatch, RootState } from '../../store/store';
+import type { AppDispatch, RootState } from '../../store/store';
 import { loginUser, clearError } from '../../store/slices/authSlice';
 
 const schema = yup.object().shape({

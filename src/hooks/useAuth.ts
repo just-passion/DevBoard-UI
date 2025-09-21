@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { RootState, AppDispatch } from '../store/store';
+import { type RootState, type AppDispatch } from '../store/store';
 import { loadUser } from '../store/slices/authSlice';
 
 export const useAuth = () => {

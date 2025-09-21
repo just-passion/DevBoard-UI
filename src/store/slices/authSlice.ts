@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { authService } from '../../services/authService';
-import { AuthState, User } from '../../types';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { authService } from '../../services/authService.ts';
+import type { AuthState } from '../../types';
 
 interface LoginCredentials {
   email: string;

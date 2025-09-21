@@ -1,3 +1,5 @@
+import { api } from './apiClient';
+
 export const taskService = {
   getTasksByProject: async (projectId: string) => {
     const response = await api.get(`/projects/${projectId}/tasks`);
