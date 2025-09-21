@@ -29,7 +29,7 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
 
   useEffect(() => {
     if (user && token) {
-      const socketInstance = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000', {
+      const socketInstance = io(import.meta.env.REACT_APP_SOCKET_URL || 'http://localhost:5000', {
         auth: { token },
       });
 

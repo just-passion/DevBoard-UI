@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from '../components/Auth/ProtectedRoute';
-import RegisterPage from '../pages/Auth/RegisterPage';
+import RegisterPage from '../components/Auth/RegisterPage';
 import DashboardPage from '../pages/Dashboard/DashboardPage';
 import KanbanPage from '../pages/Kanban/KanbanPage';
 import LoginPage from '../components/Auth/LoginPage';
