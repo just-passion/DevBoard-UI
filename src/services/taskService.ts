@@ -2,72 +2,58 @@ import { api } from './apiClient';
 
 export const taskService = {
   getTasksByProject: async (projectId: string) => {
-    const response = await api.get(`/projects/${projectId}/tasks`);
-    return response;
+    const res = await api.get(`/projects/${projectId}/tasks`);
+    return res.data;
   },
-  
+
   getTask: async (taskId: string) => {
-    const response = await api.get(`/tasks/${taskId}`);
-    return response;
+    const res = await api.get(`/tasks/${taskId}`);
+    return res.data;
   },
-  
+
   createTask: async (taskData: any) => {
-    const response = await api.post('/tasks', taskData);
-    return response;
+    const res = await api.post('/tasks', taskData);
+    return res.data;
   },
-  
+
   updateTask: async (taskId: string, taskData: any) => {
-    const response = await api.patch(`/tasks/${taskId}`, taskData);
-    return response;
+    const res = await api.put(`/tasks/${taskId}`, taskData);
+    return res.data;
   },
-  
+
   deleteTask: async (taskId: string) => {
-    const response = await api.delete(`/tasks/${taskId}`);
-    return response;
+    const res = await api.delete(`/tasks/${taskId}`);
+    return res.data;
   },
 
   updateTaskStatus: async (taskId: string, status: string) => {
-    const response = await api.patch(`/tasks/${taskId}`, { status });
-    return response;
+    const res = await api.patch(`/tasks/${taskId}/status`, { status });
+    return res.data;
   },
 
-  getTaskComments: async (taskId: string) => {
-    const response = await api.get(`/tasks/${taskId}/comments`);
-    return response;
+  addComment: async (taskId: string, comment: { content: string }) => {
+    const res = await api.post(`/tasks/${taskId}/comments`, comment);
+    return res.data;
   },
 
-  addTaskComment: async (taskId: string, content: string) => {
-    const response = await api.post(`/tasks/${taskId}/comments`, { content });
-    return response;
-  },
-
-  uploadTaskAttachment: async (taskId: string, file: File) => {
-    const formData = new FormData();
-    formData.append('file', file);
-    const response = await api.post(`/tasks/${taskId}/attachments`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
+  uploadAttachment: async (taskId: string, formData: FormData) => {
+    const res = await api.post(`/tasks/${taskId}/attachments`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
     });
-    return response;
-  },
-
-  deleteTaskAttachment: async (taskId: string, attachmentId: string) => {
-    const response = await api.delete(`/tasks/${taskId}/attachments/${attachmentId}`);
-    return response;
+    return res.data;
   },
 
   logTime: async (taskId: string, hours: number, description?: string) => {
-    const response = await api.post(`/tasks/${taskId}/time-log`, { 
-      hours, 
+    const res = await api.post(`/tasks/${taskId}/time-log`, {
+      hours,
       description,
-      date: new Date().toISOString() 
+      date: new Date().toISOString(),
     });
-    return response;
+    return res.data;
   },
 
   getTaskTimeLog: async (taskId: string) => {
-    const response = await api.get(`/tasks/${taskId}/time-log`);
-    return response;
+    const res = await api.get(`/tasks/${taskId}/time-log`);
+    return res.data;
   },
 };
