@@ -42,7 +42,7 @@ export interface ProjectMember {
 
 export interface Task {
   _id: string;
-  title: string;
+  title?: string;
   description?: string;
   taskNumber: number;
   taskId: string;

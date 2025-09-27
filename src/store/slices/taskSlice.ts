@@ -6,6 +6,7 @@ export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
   async (projectId: string, { rejectWithValue }) => {
     try {
+      console.log({projectId})
       const response = await taskService.getTasksByProject(projectId);
       return response.data;
     } catch (error: any) {
