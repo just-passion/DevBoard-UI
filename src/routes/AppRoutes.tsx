@@ -10,25 +10,10 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      
-      <Route path="/dashboard" element={
-        <ProtectedRoute>
-          <DashboardPage />
-        </ProtectedRoute>
-      } />
-      
-      <Route path="/projects/:projectId/kanban" element={
-        <ProtectedRoute>
-          <KanbanPage />
-        </ProtectedRoute>
-      } />
-      
-      <Route path="/notifications" element={
-         <ProtectedRoute>
-          <NotificationPage />
-         </ProtectedRoute>
-      } />
+      <Route path="/register" element={<RegisterPage />} />      
+      <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />      
+      <Route path="/projects/:projectId/kanban" element={<ProtectedRoute><KanbanPage /></ProtectedRoute>} />      
+      <Route path="/notifications" element={<ProtectedRoute><NotificationPage /></ProtectedRoute>} />
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
